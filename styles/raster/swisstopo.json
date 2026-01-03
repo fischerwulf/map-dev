@@ -1,0 +1,16 @@
+{
+  "version": 8,
+  "name": "Swisstopo",
+  "sources": {
+    "swisstopo": {
+      "type": "raster",
+      "tiles": ["/api/proxy/swisstopo/{z}/{x}/{y}.jpeg"],
+      "tileSize": 256,
+      "attribution": "swisstopo",
+      "maxzoom": 18
+    }
+  },
+  "layers": [
+    {"id": "swisstopo", "type": "raster", "source": "swisstopo"}
+  ]
+}

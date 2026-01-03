@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.python-version
+*.egg-info/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Secrets and environment
+.env
+.env.*
+secrets.json
+tile_auth.json
+
+# Large generated files
+static/tiles/*.pmtiles
+static/tiles/*.mbtiles
+
+# Cache (ephemeral)
+cache/
+
+# Contour generation (separate repo)
+contour-tiles/
+
+# OS
+.DS_Store
+Thumbs.db

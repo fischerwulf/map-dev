@@ -1,0 +1,241 @@
+/* Topo Map Style Development - Grid Layout */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: #252525;
+    border-bottom: 1px solid #333;
+    flex-shrink: 0;
+}
+
+header h1 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.controls label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+}
+
+.controls select {
+    padding: 0.25rem 0.5rem;
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: #e0e0e0;
+    font-size: 0.85rem;
+}
+
+.controls button {
+    padding: 0.25rem 0.75rem;
+    background: #444;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #e0e0e0;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.controls button:hover {
+    background: #555;
+}
+
+/* Main Grid */
+main#map-grid {
+    flex: 1;
+    display: grid;
+    gap: 2px;
+    background: #333;
+    min-height: 0;
+}
+
+.grid-1 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+/* Map Cell */
+.map-cell {
+    display: flex;
+    flex-direction: column;
+    background: #1a1a1a;
+    min-height: 0;
+}
+
+.map-cell.disabled {
+    opacity: 0.4;
+}
+
+.map-cell.disabled .map-container {
+    pointer-events: none;
+}
+
+.cell-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.5rem;
+    background: #252525;
+    border-bottom: 1px solid #333;
+    flex-shrink: 0;
+}
+
+.cell-header .style-select {
+    flex: 1;
+    padding: 0.2rem 0.4rem;
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 3px;
+    color: #e0e0e0;
+    font-size: 0.75rem;
+    min-width: 0;
+}
+
+.swiss-topo-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.7rem;
+    color: #888;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.swiss-topo-toggle:hover {
+    color: #aaa;
+}
+
+.swiss-topo-toggle input {
+    width: 12px;
+    height: 12px;
+}
+
+.cell-toggle {
+    padding: 0.15rem 0.4rem;
+    background: transparent;
+    border: 1px solid #555;
+    border-radius: 3px;
+    color: #888;
+    cursor: pointer;
+    font-size: 0.7rem;
+    line-height: 1;
+}
+
+.cell-toggle:hover {
+    background: #444;
+    color: #fff;
+}
+
+.map-container {
+    flex: 1;
+    min-height: 0;
+}
+
+/* MapLibre overrides */
+.maplibregl-map {
+    width: 100%;
+    height: 100%;
+}
+
+.maplibregl-ctrl-attrib {
+    font-size: 10px !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    color: #aaa !important;
+}
+
+.maplibregl-ctrl-attrib a {
+    color: #aaa !important;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 1rem;
+    background: #252525;
+    border-top: 1px solid #333;
+    flex-shrink: 0;
+    font-size: 0.8rem;
+}
+
+#coordinates {
+    font-family: "SF Mono", Monaco, Consolas, monospace;
+    color: #888;
+}
+
+footer .info {
+    color: #666;
+}
+
+footer .info code {
+    background: #333;
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 0.25rem;
+        text-align: center;
+    }
+}

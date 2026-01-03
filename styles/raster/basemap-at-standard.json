@@ -1,0 +1,16 @@
+{
+  "version": 8,
+  "name": "Austria Standard",
+  "sources": {
+    "basemap-at": {
+      "type": "raster",
+      "tiles": ["/api/proxy/basemap-at-standard/{z}/{x}/{y}.png"],
+      "tileSize": 256,
+      "attribution": "basemap.at (CC-BY 4.0)",
+      "maxzoom": 19
+    }
+  },
+  "layers": [
+    {"id": "basemap-at", "type": "raster", "source": "basemap-at"}
+  ]
+}

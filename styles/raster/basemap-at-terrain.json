@@ -1,0 +1,16 @@
+{
+  "version": 8,
+  "name": "Austria Terrain",
+  "sources": {
+    "basemap-at": {
+      "type": "raster",
+      "tiles": ["/api/proxy/basemap-at-terrain/{z}/{x}/{y}.jpeg"],
+      "tileSize": 256,
+      "attribution": "basemap.at (CC-BY 4.0)",
+      "maxzoom": 19
+    }
+  },
+  "layers": [
+    {"id": "basemap-at", "type": "raster", "source": "basemap-at"}
+  ]
+}
